@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en_GB">
+    <head>
+        <script type="text/javascript" src="url_parse.js"></script>
+    </head>
+    <body>
+        <script>
+            var url = JsWeekly.Url.parse("http://username:password@bytespider.eu");
+            console.log(url);
+            var url = JsWeekly.Url.parse("http://bytespider.eu/demo.html");
+            console.log(url);
+            var url = JsWeekly.Url.parse("http://bytespider.eu:80/demo.html");
+            console.log(url);
+            var url = JsWeekly.Url.parse("https://bytespider.eu:443/main%20demo.html");
+            console.log(url);
+            var url = JsWeekly.Url.parse("https://bytespider.eu:443/main demo.html");
+            console.log(url);
+            var url = JsWeekly.Url.parse("https://bytespider.eu:443/demo.html?a=1&b=2&c=3#test");
+            console.log(url);
+        </script>
+    </body>
+</html>
