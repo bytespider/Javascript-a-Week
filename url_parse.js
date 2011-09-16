@@ -103,7 +103,7 @@
         var regex = /(([a-zA-Z][a-zA-Z0-9+\-\.]+):\/\/)((([a-zA-Z0-9\-\._~]*)(:([a-zA-Z0-9\-\._~]*))?@)?)([a-zA-Z0-9+\-\.]*)(:([0-9]*))?(\/(([a-zA-Z\+\-\.\/]|(%[0-9]{2}))*))?(\?([a-zA-Z0-9]*(=[a-zA-Z0-9]*)?&?)*)?(#([a-zA-Z0-9]*))?/;
         var matches = url.match(regex);
 
-        var scheme = matches[2].toLower();
+        var scheme = matches[2].toLowerCase();
         var username = matches[5];
         var password = matches[7];
         var host = matches[8];
