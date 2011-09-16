@@ -67,8 +67,34 @@
 
             url.push(this.path);
 
+            var queryArray = [];
             var queryString = "";
 
+            for (var i in this.query)
+            {
+                if (this.query[i] !== "")
+                {
+                    queryArray.push(i + "=" + this.query[i]);
+                }
+                else
+                {
+                    queryArray.push(i);
+                }
+            }
+
+            queryString = queryArray.join("&");
+
+            if (queryString !== "")
+            {
+                url.push("?" + queryString);
+            }
+
+            if (this.fragment)
+            {
+                url.push("#" + this.fragment);
+            }
+
+            return url.join("");
         }
     };
 
