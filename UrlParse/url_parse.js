@@ -1,3 +1,4 @@
+var exports; // define it if it doesnt exist
 !function (global) {
     function Url(scheme, username, password, host, port, path, query_string, fragment)
     {
@@ -118,4 +119,4 @@
 
     global.JsWeekly = global.JsWeekly || {};
     global.JsWeekly.Url = Url;
-}(window || exports);
+}(exports || this);
