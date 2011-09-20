@@ -118,4 +118,4 @@
 
     global.JsWeekly = global.JsWeekly || {};
     global.JsWeekly.Url = Url;
-}(window || exports);
+}(exports || this);
