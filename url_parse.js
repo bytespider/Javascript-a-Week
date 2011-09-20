@@ -1,3 +1,4 @@
+var exports; // define it if it doesnt exist
 !function (global) {
     function Url(scheme, username, password, host, port, path, query_string, fragment)
     {
