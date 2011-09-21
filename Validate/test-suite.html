@@ -38,7 +38,13 @@
                 email = 'very.unusual."@".unusual.com@example.com';
                 equal(Validate.email(email), true, email + ' is a vaild email address');
 
+                email = '"first\last"@iana.org';
+                equal(Validate.email(email), true, email + ' is a vaild email address');
+
                 email = 'very."(),:;<>[]".VERY."very\\\ \@\"very".unusual@cool.example.com';
+                equal(Validate.email(email), true, email + ' is a vaild email address');
+
+                email = 'me@123.123.123.123';
                 equal(Validate.email(email), true, email + ' is a vaild email address');
 
 
