@@ -41,6 +41,7 @@
                 email = '"first\last"@iana.org';
                 equal(Validate.email(email), true, email + ' is a vaild email address');
 
+                /* @todo: get this complicated example to pass */
                 email = 'very."(),:;<>[]".VERY."very\\\ \@\"very".unusual@cool.example.com';
                 equal(Validate.email(email), true, email + ' is a vaild email address');
 
