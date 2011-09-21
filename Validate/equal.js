@@ -1,8 +1,9 @@
 var exports;
 !function (global) {
 
-    function exclude(value, equals)
+    function equal(value, equals)
     {
+        return value === equals;
     }
 
     global.JsWeekly = global.JsWeekly || {};
