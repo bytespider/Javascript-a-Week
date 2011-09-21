@@ -3,6 +3,18 @@ var exports;
 
     function length(value, min, max)
     {
+        var valid = true;
+        if (min != undefined && value.length < min)
+        {
+            valid = false;
+        }
+
+        if (max != undefined && value.length > max)
+        {
+            valid = false;
+        }
+
+        return valid;
     }
 
     global.JsWeekly = global.JsWeekly || {};
