@@ -3,8 +3,15 @@ var exports;
 
     function integer(value)
     {
-        value = parseInt(value, 10);
-        return value !== NaN;
+        var integer = parseInt(value, 10);
+        if (isNaN(integer))
+        {
+            return false;
+        }
+
+        // parseInt will return if value starts with a number, so check if it
+        // did match a valid integer by comparison to the original
+        return integer == value;
     }
 
     global.JsWeekly = global.JsWeekly || {};
