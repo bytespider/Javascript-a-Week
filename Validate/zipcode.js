@@ -4,7 +4,7 @@ var exports;
     function zipcode(value)
     {
         // http://en.wikipedia.org/wiki/Zipcode
-        var regex = /^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$/
+        var regex = /^\d{5}$/
         return regex.test(value);
     }
 
