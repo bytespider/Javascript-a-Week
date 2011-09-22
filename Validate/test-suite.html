@@ -8,6 +8,13 @@
         <script src="email.js"></script>
         <script src="empty.js"></script>
         <script src="integer.js"></script>
+        <script src="postcode.js"></script>
+        <script src="zipcode.js"></script>
+        <script src="length.js"></script>
+        <script src="date.js"></script>
+        <script src="alpha.js" charset="UTF-8"></script>
+
+        <script>var Validate = JsWeekly.Validate;</script>
     </head>
     <body>
         <h1 id="qunit-header">Validate</h1>
@@ -18,137 +25,14 @@
         <div id="qunit-fixture">test markup, will be hidden</div>
 
 
+        <script src="test/email.js"></script>
+        <script src="test/empty.js"></script>
+        <script src="test/integer.js"></script>
+        <script src="test/postcode.js"></script>
+        <script src="test/zipcode.js"></script>
+        <script src="test/length.js"></script>
+        <script src="test/date.js"></script>
+        <script src="test/alpha.js" charset="UTF-8"></script>
 
-        <script>
-            var Validate = JsWeekly.Validate;
-
-            test("Email", function () {
-                var email;
-
-                // valid email addresses
-                email = 'niceandsimple@example.com';
-                equal(Validate.email(email), true, email + ' is a vaild email address');
-
-                email = 'a.little.unusual@example.com';
-                equal(Validate.email(email), true, email + ' is a vaild email address');
-
-                email = 'much."more\ unusual"@example.com';
-                equal(Validate.email(email), true, email + ' is a vaild email address');
-
-                email = 'very.unusual."@".unusual.com@example.com';
-                equal(Validate.email(email), true, email + ' is a vaild email address');
-
-                email = '"first\last"@iana.org';
-                equal(Validate.email(email), true, email + ' is a vaild email address');
-
-                /* @todo: get this complicated example to pass */
-                email = 'very."(),:;<>[]".VERY."very\\\ \@\"very".unusual@cool.example.com';
-                equal(Validate.email(email), true, email + ' is a vaild email address');
-
-                email = 'me@123.123.123.123';
-                equal(Validate.email(email), true, email + ' is a vaild email address');
-
-
-                // invalid email addresses
-                email = 'Abc.example.com';
-                equal(Validate.email(email), false, email + ' is an invaild email address');
-
-                email = 'A@b@c@example.com';
-                equal(Validate.email(email), false, email + ' is an invaild email address');
-
-                email = '"(),:;<>[\]@example.com';
-                equal(Validate.email(email), false, email + ' is an invaild email address');
-
-                email = 'just"not"right@example.com';
-                equal(Validate.email(email), false, email + ' is an invaild email address');
-
-                email = 'this\ is\"really\"not\\allowed@example.com';
-                equal(Validate.email(email), false, email + ' is an invaild email address');
-            });
-
-            test("Empty", function () {
-                var value;
-
-                // empty values
-                value = '';
-                equal(Validate.empty(value), true, '"" is empty');
-
-                value = 0;
-                equal(Validate.empty(value), true, value + ' is empty');
-
-                value = 0.0;
-                equal(Validate.empty(value), true, value + ' is empty');
-
-                value = null;
-                equal(Validate.empty(value), true, value + ' is empty');
-
-                value = undefined;
-                equal(Validate.empty(value), true, value + ' is empty');
-
-                value = [];
-                equal(Validate.empty(value), true, '[] is empty');
-
-
-                // not empty values
-                value = 'some text';
-                equal(Validate.empty(value), false, value + ' is empty');
-
-                value = '0';
-                equal(Validate.empty(value), false, value + ' is empty');
-
-                value = '0.0';
-                equal(Validate.empty(value), false, value + ' is empty');
-
-                value = 0.1;
-                equal(Validate.empty(value), false, value + ' is empty');
-
-                value = 1;
-                equal(Validate.empty(value), false, value + ' is empty');
-
-                value = ["value"];
-                equal(Validate.empty(value), false, value + ' is empty');
-
-            });
-
-            test("Integer", function () {
-                var value;
-
-                // integer values
-                value = 0;
-                equal(Validate.integer(value), true, value + ' is an integer');
-
-                value = 1;
-                equal(Validate.integer(value), true, value + ' is an integer');
-
-                value = -1;
-                equal(Validate.integer(value), true, value + ' is an integer');
-
-                value = "0";
-                equal(Validate.integer(value), true, value + ' is an integer');
-
-                value = "1";
-                equal(Validate.integer(value), true, value + ' is an integer');
-
-                value = "-1";
-                equal(Validate.integer(value), true, value + ' is an integer');
-
-
-                // not integer values
-                value = 0.1;
-                equal(Validate.integer(value), false, value + ' is not an integer');
-
-                value = 'a';
-                equal(Validate.integer(value), false, value + ' is not an integer');
-
-                value = false;
-                equal(Validate.integer(value), false, value + ' is not an integer');
-
-                value = null;
-                equal(Validate.integer(value), false, value + ' is not an integer');
-
-                value = undefined;
-                equal(Validate.integer(value), false, value + ' is not an integer');
-            });
-        </script>
     </body>
 </html>
