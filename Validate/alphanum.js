@@ -3,6 +3,8 @@ var exports;
 
     function alphanum(value)
     {
+        var regex = /^[a-zA-Z0-9]+$/;
+        return regex.test(value);
     }
 
     global.JsWeekly = global.JsWeekly || {};
