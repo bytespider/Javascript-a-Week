@@ -33,3 +33,5 @@ Here we demonstrate that by using nested namespaces we can add more methods to
 our object in any order, much like a plugin system. Each of the validators can be
 use alone, or together for a complete validation package.
 
+Demonstrates that using a testing tool like QUnit can help you make sure that
+your code always works.
